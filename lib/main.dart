@@ -40,10 +40,9 @@ class MyHomePage extends  StatelessWidget {
                 },
                 child: Center(
                   child: Container(
-                    // height: 50,
-                    // width: 50,
-                    // child: Image.network("https://www.mobilexpense.com/hubfs/MobileXpense/backgrounds/bg-new-tablet.svg",)
-                    child:Text("trackit",style: TextStyle(fontSize:30),),
+                    
+                    // child:Text("trackit",style: TextStyle(fontSize:30),),
+                    
                   ),
                 ),
               ),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trackit/models/provider.dart';
+import 'package:trackit/screens/add_transaction.dart';
 import 'package:trackit/screens/stats.dart';
+
+import 'goals.dart';
+import 'home_tab.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -53,15 +57,15 @@ class _HomeTrackState extends State<HomeTrack> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.graphic_eq),
+            icon: Icon(Icons.bar_chart),
             label: 'Stats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.circle),
+            icon: Icon(Icons.trip_origin),
             label: 'goals',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.contact_mail),
+            icon: Icon(Icons.account_circle_outlined),
             label: 'Profile',
           ),
           
@@ -76,7 +80,12 @@ class _HomeTrackState extends State<HomeTrack> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: new FloatingActionButton(
         
-        onPressed:(){},
+        onPressed:(){
+          Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddTransaction()),
+                  );
+        },
         
         child: new Icon(Icons.add),
       ), 
@@ -86,8 +95,11 @@ class _HomeTrackState extends State<HomeTrack> {
         }));
   }
 }
-// ignore: camel_case_types
-class Home_Tab extends StatelessWidget {
+
+
+
+
+class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,50 +109,11 @@ class Home_Tab extends StatelessWidget {
         height: 300,
         width: 300,
         child: Text(
-          "Home",
+          "Profile",
           style: TextStyle(color: Colors.white, fontSize: 30),
         ),
-        color: Colors.amber,
+        color: Colors.deepPurple,
       )),
-    );
-  }
-}
-
-class Goals extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          height: 300,
-          width: 300,
-          child: Text(
-            "Profile",
-            style: TextStyle(color: Colors.white, fontSize: 30),
-          ),
-          color: Colors.green,
-        ),
-      ),
-    );
-  }
-}
-class Profile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          height: 300,
-          width: 300,
-          child: Text(
-            "Profile",
-            style: TextStyle(color: Colors.white, fontSize: 30),
-          ),
-          color: Colors.blue,
-        ),
-      ),
     );
   }
 }
